@@ -5,32 +5,33 @@ using namespace std;
 
 int main() {
     int n;
-    string a,b;
+    string strA,strB;
+    vector<char> vA, vB;
 
     cin >> n;
     cin.ignore();
-    getline(cin, a);
-    getline(cin, b);
-
-    vector<char> charA, charB;
+    getline(cin, strA);
+    getline(cin, strB);
 
     for (int i = 0; i < n; i++) {
-        if(a.at(i) >= 'a' && a.at(i) <= 'z') charA.push_back(a.at(i));
-        if(b.at(i) >= 'a' && b.at(i) <= 'z') charB.push_back(b.at(i));
+        if(strA.at(i) >= 'a' && strA.at(i) <= 'z') vA.push_back(strA.at(i));
+        if(strB.at(i) >= 'a' && strB.at(i) <= 'z') vB.push_back(strB.at(i));
     }
 
-    if (charA.size() != charB.size()) {
+    if (vA.size() != vB.size()) {
         cout << "N\n";
         return 0;
     }
 
-    sort(charA.begin(), charA.end());
-    sort(charB.begin(), charB.end());
+    sort(vA.begin(), vA.end());
+    sort(vB.begin(), vB.end());
 
     bool eql = true;
-    for (int i = 0; i < charA.size(); i++) {
-        if(charA.at(i) != charB.at(i)) eql = false;
-        break;
+    for (int i = 0; i < vA.size(); i++) {
+        if(vA.at(i) != vB.at(i)) { 
+            eql = false;
+            break;
+        }
     }
     
     if (eql) cout << "S\n";
