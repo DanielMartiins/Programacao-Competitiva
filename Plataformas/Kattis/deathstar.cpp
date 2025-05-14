@@ -16,7 +16,7 @@ void solve() {
         ans[i] = 0;
         for (int j = 0; j < n; j++) {
             if (i == j) continue;
-            ans[i] |= m[i][j];
+            ans[i] |= m[i][j]; //Another solution: ans[i] = max(ans[i], m[i][j])
         }
     }
     
