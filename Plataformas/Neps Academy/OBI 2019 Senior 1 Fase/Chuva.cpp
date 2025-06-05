@@ -10,7 +10,6 @@ char matriz[MAX_N][MAX_M];
 void imprimirMatriz() {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
-            //cout << matriz[i][j];
             printf("%c", matriz[i][j]);
         }
         printf("\n");
@@ -25,7 +24,7 @@ void recursao(int i, int j) {
 
     matriz[i][j] = 'o';
     if (matriz[i+1][j] == '#') {
-        
+
         //Comparações necessárias para não estourar a pilha de chamadas
         if (matriz[i][j+1] == '.') recursao(i, j+1);
         if (matriz[i][j-1] == '.') recursao(i, j-1);
