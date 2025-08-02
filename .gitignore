@@ -1,5 +1,6 @@
 ignore/
 .vscode/
 Plataformas/Codeforces/Round 1022 (Div. 2)/c.cpp
+*.txt
 *.exe
 *.out
