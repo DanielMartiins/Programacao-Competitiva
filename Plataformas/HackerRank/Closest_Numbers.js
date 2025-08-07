@@ -19,20 +19,15 @@ function main() {
 	const arr = lines[1].split(" ").map(Number);
 	arr.sort(function (a, b) { return a - b;});
 
-	let smallest_diff = Math.abs(arr[0] - arr[1]);
-    closestPairs.push(arr[0])
-    closestPairs.push(arr[1])
-    for (let i = 2; i < n; i++) {
+	let smallest_diff = Number.MAX_SAFE_INTEGER;
+    for (let i = 1; i < n; i++) {
         const diff = Math.abs(arr[i-1] - arr[i]);
-        if (diff === smallest_diff) {
-            closestPairs.push(arr[i-1])
-            closestPairs.push(arr[i])
-        }
+        if (diff === smallest_diff)
+            closestPairs.push(arr[i-1], arr[i])
         else if (diff < smallest_diff) {
             resetClosestPairsArray();
             smallest_diff = diff;
-            closestPairs.push(arr[i-1])
-            closestPairs.push(arr[i])        
+            closestPairs.push(arr[i-1], arr[i])
         }
     }
 
