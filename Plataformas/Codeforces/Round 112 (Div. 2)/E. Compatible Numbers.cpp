@@ -34,11 +34,11 @@ int main() {
     }
 
     for (int i = 0; i < n; i++) {
-        int invertido = arr[i] ^ ((1 << MAX_BITS) - 1);
+        int inverted_x = arr[i] ^ ((1 << MAX_BITS) - 1);
         if (i == 0) 
-            cout << S[invertido];
+            cout << S[inverted_x];
         else 
-            cout << " " << S[invertido];
+            cout << " " << S[inverted_x];
     }
     cout << "\n";
 }
