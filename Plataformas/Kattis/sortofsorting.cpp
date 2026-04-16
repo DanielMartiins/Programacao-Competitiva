@@ -9,13 +9,10 @@ int main() {
         set<tuple<string, int, string>> names; //<2 characters, order, full name>
         for(int i = 0; i < n; i++) {
             string full_name;
-            string two_chars;
             cin >> full_name;
-            two_chars = full_name.substr(0, 2);
-            names.insert({two_chars, i, full_name});
+            names.insert({full_name.substr(0, 2), i, full_name});
         }
-
-        for (auto s : names) 
+        for (auto s: names) 
             cout << get<2>(s) << "\n";
         cout << "\n";
     }
