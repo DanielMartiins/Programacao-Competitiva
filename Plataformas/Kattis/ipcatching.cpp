@@ -8,7 +8,6 @@ struct Ip {
 vector<Ip> lkup_table;
 
 bool match(Ip lkup, Ip ip) {
-    if (lkup.mask == 0) return true;
     int abcd_lkup[4] = {lkup.a, lkup.b, lkup.c, lkup.d}; 
     int abcd_ip[4] = {ip.a, ip.b, ip.c, ip.d}; 
     int num_blocks = (lkup.mask / 8) + (lkup.mask % 8 != 0);
